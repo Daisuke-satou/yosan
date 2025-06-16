@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import { Plus, TrendingUp, Wallet, PieChart, List, Search, Filter, Edit, Trash2 } from "lucide-react";
+import { Plus, TrendingUp, Wallet, PieChart, List, Search, Filter, Edit, Trash2, Calculator, BarChart3, FileSpreadsheet } from "lucide-react";
 import AddExpenseModal from "@/components/modals/add-expense-modal";
 import BudgetProgress from "@/components/charts/budget-progress";
 import type { Expense, MonthlyReport, BudgetSummary } from "@shared/schema";

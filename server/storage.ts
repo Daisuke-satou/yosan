@@ -101,8 +101,12 @@ export class MemStorage implements IStorage {
   async createExpense(insertExpense: InsertExpense): Promise<Expense> {
     const id = this.currentExpenseId++;
     const expense: Expense = {
-      ...insertExpense,
       id,
+      date: insertExpense.date,
+      category: insertExpense.category,
+      amount: insertExpense.amount,
+      user: insertExpense.user,
+      description: insertExpense.description || null,
       createdAt: new Date(),
     };
     this.expenses.set(id, expense);
@@ -149,7 +153,14 @@ export class MemStorage implements IStorage {
 
   async createBudget(insertBudget: InsertBudget): Promise<Budget> {
     const id = this.currentBudgetId++;
-    const budget: Budget = { ...insertBudget, id };
+    const budget: Budget = {
+      id,
+      category: insertBudget.category,
+      amount: insertBudget.amount,
+      period: insertBudget.period || "monthly",
+      year: insertBudget.year,
+      month: insertBudget.month || null,
+    };
     this.budgets.set(id, budget);
     return budget;
   }
